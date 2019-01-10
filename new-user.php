@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   move_uploaded_file($_FILES['image'], 'images/' . $filename);
   $sql = "INSERT INTO users VALUES ($name, $email, $filename)";
 
-  if ($conn->query($sql) === true) {
+  if ($con->query($sql) === true) {
     $msg->status = true;
     $response = json_encode($msg);
     echo $response;
